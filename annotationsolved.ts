@@ -1,12 +1,12 @@
-
+/*eslint-disable @typescript-eslint/no-unused-vars */
 // Adding Type ANNOTATIONS
 // Replace the `unknown` type annotations with the correct type
-let guestCount : unknown = 50;
+let guestCount : number = 50;
 
-let favoriteDessert : unknown = "Cheesecake";
+let favoriteDessert : string = "Cheesecake";
 
 
-const ingredients: unknown = [
+const ingredients: string[] = [
     "butter",
     "flour",
     "backing powder",
@@ -25,7 +25,8 @@ const menu: {
 
 } = {
     courses: 5,
-    veganOption: true
+    veganOption: true,
+    drinkChoices: ["wine", "whiskey"]
 };
 
 
@@ -36,7 +37,8 @@ const apple = {
     sweetness: 80
 };
 
-function eatFruit(fruit) {
+
+function eatFruit(fruit: {name: string}) {
     if (fruit.name === "apple") {
         console.log("I love apples!");
     }
@@ -46,15 +48,15 @@ function eatFruit(fruit) {
 
 eatFruit(apple);
 
-function transformFruit(fruitList, transFromFunction) {
-    return fruitList.map(transFromFunction);
+function transformFruit(fruitList: string[], transFormFunction : (item: string) => string) {
+    return fruitList.map(transFormFunction);
 }
 
 
 const fruitList = ["Apple", "Banana", "Orange"];
 
 
-function bakeFruit(fruitName) {
+function bakeFruit(fruitName: string) : string {
     return `Baked ${fruitName}`;
 }
 
