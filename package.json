@@ -5,5 +5,11 @@
   "license": "MIT",
   "dependencies": {
     "ts-node": "^10.9.1"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.5",
+    "nodemon": "^2.0.19",
+    "tslib": "^2.4.0",
+    "typescript": "^4.7.4"
   }
 }
