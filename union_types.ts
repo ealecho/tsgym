@@ -39,6 +39,7 @@ const makeWeek = (): Date & {end: Date} => {
 }
 
 const thisWeek = makeWeek()
+
 thisWeek.end.toISOString
 
 console.table([thisWeek.end.toISOString()])
