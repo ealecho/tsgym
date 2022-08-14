@@ -1,0 +1,16 @@
+type FormSubmitHandler =  (data: FormData) => void
+type MessageHandler = (evt: MessageEvent) => void
+
+function handleMainEvent (
+    elem: HTMLFormElement | HTMLIFrameElement,
+    handler: FormSubmitHandler | MessageHandler
+){}
+
+const myFrame =  document.getElementsByTagName("iframe")[0]
+
+handleMainEvent(myFrame, (val) => {
+    //val implicity has an any type
+    //this is not good we are allowing too many possiblities here, including things
+    //don't aim to support (e.g  HTMLIFrameElement with FormSubmitHandler), which doesn't make much sense
+    //check funcOv2
+})
